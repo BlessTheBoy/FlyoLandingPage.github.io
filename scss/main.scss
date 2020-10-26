@@ -1,5 +1,10 @@
 @import 'config';
 
+@font-face{
+    font-family: "Alliance";
+    src: url("../Alliance.ttf") format("truetype");
+}
+
 // ## Colors
 
 // ### Primary
@@ -24,6 +29,7 @@ $logoWidth: 100px;
 // ## Fonts
 $headerFont: 'Raleway', sans-serif;
 $bodyFont: 'Open Sans', sans-serif;
+$inputHeight: 35px;
 
 @mixin transition-ease ($time) {
     transition: all $time ease-in-out;
@@ -33,6 +39,24 @@ body{
     color: $White;
     font-family: $bodyFont;
     background-color: $DarkBlue;
+}
+button{
+    height: $inputHeight;
+    border-radius: 40px;
+    color: $White;
+    background-image: linear-gradient(to right, $Cyan, $Blue);
+    outline: none;
+    border: none;
+    font-family: $headerFont;
+    font-weight: 400;
+    font-size: .8rem;
+    margin: 1rem 0;
+    cursor: pointer;
+    @include transition-ease(.5sec);
+    
+    &:hover{
+        transform: scale(1.05);
+    }
 }
 
 .header{
@@ -104,22 +128,6 @@ body{
             button{
                 width: 200px;
                 max-width: 80%;
-                height: 35px;
-                border-radius: 40px;
-                color: $White;
-                background-image: linear-gradient(to right, $Cyan, $Blue);
-                outline: none;
-                border: none;
-                font-family: $headerFont;
-                font-weight: 400;
-                font-size: .8rem;
-                margin: 1rem 0;
-                cursor: pointer;
-                @include transition-ease(.5sec);
-                
-                &:hover{
-                    transform: scale(1.05);
-                }
             }
         }
     }
@@ -243,8 +251,8 @@ body{
             border-radius: 5px;
             width: 70%;
             margin: 0 auto;
-            transform: translateY(50%);
-            padding: 2rem 2rem 1rem;
+            transform: translateY(40%);
+            padding: 2rem 3.5rem 1.5rem;
             text-align: center;
             .text-container{
                 padding: 0 2rem;
@@ -262,9 +270,17 @@ body{
                 justify-content: space-between;
                 input{
                     flex-basis: 70%;
+                    height: $inputHeight;
+                    border-radius: 40px;
+                    outline: none;
+                    border: none;
+                    font-size: .7rem;
+                    padding-left: 2rem;
                 }
                 button{
                     flex-basis: 27%;
+                    margin: 0;
+                    font-size: .65rem;
                 }
             }
         }
@@ -272,6 +288,74 @@ body{
 }
 footer{
     background: $DarkBlue3;
-    height: 50vh;
-    padding-top: 5rem;
+    padding-top: 7rem;
+    .container{
+        max-width: 1100px;
+        .footer-logo{
+            display: block;
+            width: 100%;
+            text-align: left;
+            margin-bottom: 2rem;
+            img{
+                width: $logoWidth;
+            }
+        }
+        .footer-links{
+            display: flex;
+            justify-content: space-between;
+            text-align: left;
+            font-size: .8rem;
+            margin: 0 auto 1rem;
+            img{
+                height: 10px;
+                margin-right: .5rem;
+            }
+            p{
+                margin-bottom: .5rem;
+                cursor: pointer;
+                &:hover{
+                    color: $Cyan;
+                }
+            }
+            .location{
+                flex-basis: 30%;
+                display: flex;
+                img{
+                    height: 15px;
+                }
+            }
+            .social-links{
+                a{
+                    display: inline-block;
+                    color: $White;
+                    font-size: .7rem;
+                    width: 25px;
+                    height: 25px;
+                    border: 1px solid $White;
+                    border-radius: 50%;
+                    padding: 3px;
+                    padding-left: 6px;
+                    padding-top: 4px;
+                    margin-left: .5rem;
+                    &:hover{
+                        color: $Cyan;
+                        border-color: $Cyan;
+                    }
+                }
+            }
+        }
+        .attribution{
+            padding-bottom: 1rem;
+            color: #777;
+            a{
+                color: #777;
+                &:hover{
+                    color: $Cyan;
+                }
+                &.BlessTheBoy{
+                    font-family: Alliance;
+                }
+            }
+        }
+    }
 }
