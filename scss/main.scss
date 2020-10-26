@@ -1,0 +1,107 @@
+@import 'config';
+
+// ## Colors
+
+// ### Primary
+
+$DarkBlue: hsl(217, 28%, 15%);
+$DarkBlue2: hsl(218, 28%, 13%);
+$DarkBlue3: hsl(216, 53%, 9%);
+$DarkBlue4: hsl(219, 30%, 18%);
+
+// ### Accent
+
+$Cyan: hsl(176, 68%, 64%);
+$Blue: hsl(198, 60%, 50%);
+
+// ### Neutral
+
+$White: hsl(0, 0%, 100%);
+
+// ## Numbers
+$logoWidth: 100px;
+
+// ## Fonts
+$headerFont: 'Raleway', sans-serif;
+$bodyFont: 'Open Sans', sans-serif;
+
+
+.header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $White;
+    padding: 50px 8% 10px;
+    background-color: $DarkBlue;
+    .logo-container{
+        width: $logoWidth;
+        img{
+            width: 100%;
+        }
+    }
+    .nav{
+        ul{
+            display: flex;
+            li{
+                margin-left: 2rem;
+                font-family: $headerFont;
+                a{
+                    color: $White;
+                    padding: .4rem;
+                    font-size: .8rem;
+                }
+            }
+        }
+    }
+}
+.intro{
+    min-height: calc(100vh - 80px);
+    background: $DarkBlue url('../images/bg-curvy-desktop.svg');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    align-items: flex-start;
+    color: $White;
+    .container{        
+        width: 90%;
+        max-width: 500px;
+        margin: 0 auto 6rem;
+        text-align: center;
+        .image-container{
+            margin: 1rem auto 0;
+            img{
+                width: 100%;
+            }
+        }
+        .text-container{
+            h1{
+                font-size: 1.8rem;
+                font-family: $headerFont;
+                font-weight: 700;
+                margin: 2rem auto 1rem;
+            }
+            p{
+                font-family: $bodyFont;
+                font-weight: 400;
+                font-size: .8rem;
+                padding: 0 2.5rem;
+                line-height: 1.3rem;
+            }
+            button{
+                width: 200px;
+                height: 35px;
+                border-radius: 40px;
+                color: $White;
+                background-image: linear-gradient(to right, $Cyan, $Blue);
+                outline: none;
+                border: none;
+                font-family: $headerFont;
+                font-weight: 400;
+                font-size: .8rem;
+                margin: 1rem 0;
+            }
+        }
+    }
+}

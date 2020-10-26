@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: white;
+  padding: 50px 8% 10px;
+  background-color: #1c2431;
+}
+
+.header .logo-container {
+  width: 100px;
+}
+
+.header .logo-container img {
+  width: 100%;
+}
+
+.header .nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header .nav ul li {
+  margin-left: 2rem;
+  font-family: "Raleway", sans-serif;
+}
+
+.header .nav ul li a {
+  color: white;
+  padding: .4rem;
+  font-size: .8rem;
+}
+
+.intro {
+  min-height: calc(100vh - 80px);
+  background: #1c2431 url("../images/bg-curvy-desktop.svg");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  color: white;
+}
+
+.intro .container {
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto 6rem;
+  text-align: center;
+}
+
+.intro .container .image-container {
+  margin: 1rem auto 0;
+}
+
+.intro .container .image-container img {
+  width: 100%;
+}
+
+.intro .container .text-container h1 {
+  font-size: 1.8rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  margin: 2rem auto 1rem;
+}
+
+.intro .container .text-container p {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: .8rem;
+  padding: 0 2.5rem;
+  line-height: 1.3rem;
+}
+
+.intro .container .text-container button {
+  width: 200px;
+  height: 35px;
+  border-radius: 40px;
+  color: white;
+  background-image: -webkit-gradient(linear, left top, right top, from(#65e2d9), to(#339ecc));
+  background-image: linear-gradient(to right, #65e2d9, #339ecc);
+  outline: none;
+  border: none;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: .8rem;
+  margin: 1rem 0;
+}
+/*# sourceMappingURL=main.css.map */
