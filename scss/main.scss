@@ -25,6 +25,15 @@ $logoWidth: 100px;
 $headerFont: 'Raleway', sans-serif;
 $bodyFont: 'Open Sans', sans-serif;
 
+@mixin transition-ease ($time) {
+    transition: all $time ease-in-out;
+}
+
+body{
+    color: $White;
+    font-family: $bodyFont;
+    background-color: $DarkBlue;
+}
 
 .header{
     width: 100%;
@@ -55,6 +64,12 @@ $bodyFont: 'Open Sans', sans-serif;
         }
     }
 }
+.container{        
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
 .intro{
     min-height: calc(100vh - 80px);
     background: $DarkBlue url('../images/bg-curvy-desktop.svg');
@@ -64,11 +79,8 @@ $bodyFont: 'Open Sans', sans-serif;
     display: flex;
     align-items: flex-start;
     color: $White;
-    .container{        
-        width: 90%;
-        max-width: 500px;
-        margin: 0 auto 6rem;
-        text-align: center;
+    .container{
+        margin-bottom: 6rem;
         .image-container{
             margin: 1rem auto 0;
             img{
@@ -91,6 +103,7 @@ $bodyFont: 'Open Sans', sans-serif;
             }
             button{
                 width: 200px;
+                max-width: 80%;
                 height: 35px;
                 border-radius: 40px;
                 color: $White;
@@ -101,7 +114,164 @@ $bodyFont: 'Open Sans', sans-serif;
                 font-weight: 400;
                 font-size: .8rem;
                 margin: 1rem 0;
+                cursor: pointer;
+                @include transition-ease(.5sec);
+                
+                &:hover{
+                    transform: scale(1.05);
+                }
             }
         }
     }
+}
+
+.features{
+    background-color: $DarkBlue2;
+    color: $White;
+    font-family: $bodyFont;
+    .container{
+        max-width: 700px;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        .feature{
+            flex: 1 1 300px;
+            max-width: 280px;
+            margin-bottom: 4rem;
+            img{
+                height: 60px;
+                margin-bottom: 1rem;
+            }
+            h4{
+                font-family: $headerFont;
+                margin-bottom: .5rem;
+            }
+            p{
+                font-size: .7rem;
+            }
+        }
+    }
+}
+.productive{
+    background: $DarkBlue2;
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1000px;
+        text-align: left;
+        padding: 3rem 0;
+        .image-container{
+            flex-basis: 48%;
+            img{
+                width: 100%;
+            }
+        }
+        .text-container{
+            flex-basis: 48%;
+            h2{
+                font-family: $headerFont;
+                font-weight: 700;
+                font-size: 2.55rem;
+                margin-bottom: 1rem;
+            }
+            P{
+                font-size: .8rem;
+                margin-bottom: .6rem;
+            }
+            .work{
+                color: $Cyan;
+                position: relative;
+                #text{
+                    hr{
+                        width: 165px;
+                    }
+                }
+                
+            }
+        }
+    }
+}
+.info{
+    background: $DarkBlue2;
+    .container{
+        // display: flex;
+        // justify-content: space-between;
+        // align-items: flex-end;
+        max-width: 1000px;
+        text-align: left;
+        position: relative;
+        padding-top: 5rem;
+        .testimonials{
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            .testimonial{
+                margin: 0 1rem 2rem;
+                background: $DarkBlue4;
+                border-radius: 5px;
+                flex-basis: 300px;
+                padding: 2.5rem 2rem 1rem;
+                -webkit-box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.13);
+                -moz-box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.13);
+                box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.13);
+                p{
+                    font-size: .7rem;
+                    margin-bottom: 1rem;
+                }
+                .author{
+                    display: flex;
+                    img{
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        margin-right: .5rem;
+                    }
+                    &-details{
+                        h4{
+                            font-size: .6rem;
+                        }
+                        p{
+                            font-size: .5rem;
+                        }
+                    }
+                }
+            }
+        }
+        .access{
+            background: $DarkBlue;
+            border-radius: 5px;
+            width: 70%;
+            margin: 0 auto;
+            transform: translateY(50%);
+            padding: 2rem 2rem 1rem;
+            text-align: center;
+            .text-container{
+                padding: 0 2rem;
+                h2{
+                    font-family: $headerFont;
+                    margin-bottom: .8rem;
+                }
+                p{
+                    font-size: .75rem;
+                    margin-bottom: 1rem;
+                }
+            }
+            form{
+                display: flex;
+                justify-content: space-between;
+                input{
+                    flex-basis: 70%;
+                }
+                button{
+                    flex-basis: 27%;
+                }
+            }
+        }
+    }
+}
+footer{
+    background: $DarkBlue3;
+    height: 50vh;
+    padding-top: 5rem;
 }
