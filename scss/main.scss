@@ -25,11 +25,12 @@ $White: hsl(0, 0%, 100%);
 
 // ## Numbers
 $logoWidth: 100px;
+$inputHeight: 35px;
+$logoWidthMobile: 80px;
 
 // ## Fonts
 $headerFont: 'Raleway', sans-serif;
 $bodyFont: 'Open Sans', sans-serif;
-$inputHeight: 35px;
 
 @mixin transition-ease ($time) {
     transition: all $time ease-in-out;
@@ -38,7 +39,6 @@ $inputHeight: 35px;
 body{
     color: $White;
     font-family: $bodyFont;
-    background-color: $DarkBlue;
 }
 button{
     height: $inputHeight;
@@ -83,6 +83,9 @@ button{
                     color: $White;
                     padding: .4rem;
                     font-size: .8rem;
+                    &:hover{
+                        color: $Cyan;
+                    }
                 }
             }
         }
@@ -193,6 +196,7 @@ button{
                 #text{
                     hr{
                         width: 165px;
+                        border-color: $Cyan;
                     }
                 }
                 
@@ -216,6 +220,7 @@ button{
             flex-wrap: wrap;
             .testimonial{
                 margin: 0 1rem 2rem;
+                position: relative;
                 background: $DarkBlue4;
                 border-radius: 5px;
                 flex-basis: 300px;
@@ -223,6 +228,17 @@ button{
                 -webkit-box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.13);
                 -moz-box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.13);
                 box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.13);
+
+                &:first-child::before{
+                    content: url('../images/bg-quotes.png');
+                    width: 15px;
+                    color: $Cyan;
+                    position: absolute;
+                    transform: translateY(-110%);
+                    left: -10px;
+                    margin: 0;
+                    padding: 0;
+                }
                 p{
                     font-size: .7rem;
                     margin-bottom: 1rem;
@@ -254,6 +270,9 @@ button{
             transform: translateY(40%);
             padding: 2rem 3.5rem 1.5rem;
             text-align: center;
+            -webkit-box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.13);
+            -moz-box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.13);
+            box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.13);
             .text-container{
                 padding: 0 2rem;
                 h2{
@@ -306,6 +325,7 @@ footer{
             text-align: left;
             font-size: .8rem;
             margin: 0 auto 1rem;
+            opacity: .9;
             img{
                 height: 10px;
                 margin-right: .5rem;
@@ -334,8 +354,8 @@ footer{
                     border: 1px solid $White;
                     border-radius: 50%;
                     padding: 3px;
-                    padding-left: 6px;
-                    padding-top: 4px;
+                    padding-left: 7px;
+                    padding-top: 3px;
                     margin-left: .5rem;
                     &:hover{
                         color: $Cyan;
@@ -354,6 +374,125 @@ footer{
                 }
                 &.BlessTheBoy{
                     font-family: Alliance;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 43.75rem){
+    .header{
+        .logo-container{
+            width: $logoWidthMobile;
+        }
+        .nav{
+            ul{
+                li{
+                    margin-left: 1rem;
+                    a{
+                        padding: .3rem;
+                        font-size: .7rem;
+                    }
+                }
+            }
+        }
+    }
+    .intro{
+        background: $DarkBlue url('../images/bg-curvy-mobile.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: bottom;
+        .container{
+            .text-container{
+                h1{
+                    font-size: 1.4rem;
+                    line-height: 2rem;
+                }
+                p{
+                    font-size: .75rem;
+                }
+            }
+        }
+    }
+    .features{
+        .container{
+            .feature{
+                p{
+                    line-height: 1rem;
+                }
+            }
+        }
+    }
+    .productive{
+        .container{
+            flex-direction: column;
+            padding: 3rem 1rem;
+            .text-container{
+                h2{
+                    font-size: 1.1rem;
+                    margin-top: 2rem;
+                }
+                p{
+                    font-size: .85rem;
+                    line-height: 1.15rem;
+                }
+                .work{
+                    #text{
+                        font-size: .85rem;
+                        hr{
+                            width: 145px;
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+    .info{
+        .container{
+            .access{
+                width: 100%;
+                padding: 1.7rem;
+                .text-container{
+                    padding: 0;
+                    padding-top: 1.5rem;
+                    h2{
+                        font-size: 1.3rem;
+                    }
+                    p{
+                        font-size: .8rem;
+                    }
+                }
+                form{
+                    flex-direction: column;
+                    input{
+                        height: $inputHeight;
+                        padding: .6rem;
+                        padding-left: 1.5rem;
+                        margin-bottom: 1rem;
+                    }
+                    button{
+                        height: $inputHeight;
+                        padding: .6rem;
+                        font-size: .75rem;
+                    }
+                }
+            }
+        }
+    }
+    footer{
+        padding-top: 11rem;
+        .container{
+            padding: 0 .5rem;
+            .footer-links{
+                flex-direction: column;
+                justify-content: flex-start;
+
+                .contact, .list1, .list2{
+                    margin-bottom: 2rem;
+                }
+                .social-links{
+                    margin: 0 auto;
                 }
             }
         }

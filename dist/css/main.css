@@ -21,7 +21,6 @@ a {
 body {
   color: white;
   font-family: "Open Sans", sans-serif;
-  background-color: #1c2431;
 }
 
 button {
@@ -85,6 +84,10 @@ button:hover {
   color: white;
   padding: .4rem;
   font-size: .8rem;
+}
+
+.header .nav ul li a:hover {
+  color: #65e2d9;
 }
 
 .container {
@@ -232,6 +235,7 @@ button:hover {
 
 .productive .container .text-container .work #text hr {
   width: 165px;
+  border-color: #65e2d9;
 }
 
 .info {
@@ -258,6 +262,7 @@ button:hover {
 
 .info .container .testimonials .testimonial {
   margin: 0 1rem 2rem;
+  position: relative;
   background: #202a3c;
   border-radius: 5px;
   -ms-flex-preferred-size: 300px;
@@ -265,6 +270,18 @@ button:hover {
   padding: 2.5rem 2rem 1rem;
   -webkit-box-shadow: 10px 10px 5px -4px rgba(0, 0, 0, 0.13);
   box-shadow: 10px 10px 5px -4px rgba(0, 0, 0, 0.13);
+}
+
+.info .container .testimonials .testimonial:first-child::before {
+  content: url("../images/bg-quotes.png");
+  width: 15px;
+  color: #65e2d9;
+  position: absolute;
+  -webkit-transform: translateY(-110%);
+          transform: translateY(-110%);
+  left: -10px;
+  margin: 0;
+  padding: 0;
 }
 
 .info .container .testimonials .testimonial p {
@@ -302,6 +319,8 @@ button:hover {
           transform: translateY(40%);
   padding: 2rem 3.5rem 1.5rem;
   text-align: center;
+  -webkit-box-shadow: 10px 10px 5px -4px rgba(0, 0, 0, 0.13);
+  box-shadow: 10px 10px 5px -4px rgba(0, 0, 0, 0.13);
 }
 
 .info .container .access .text-container {
@@ -375,6 +394,7 @@ footer .container .footer-links {
   text-align: left;
   font-size: .8rem;
   margin: 0 auto 1rem;
+  opacity: .9;
 }
 
 footer .container .footer-links img {
@@ -412,8 +432,8 @@ footer .container .footer-links .social-links a {
   border: 1px solid white;
   border-radius: 50%;
   padding: 3px;
-  padding-left: 6px;
-  padding-top: 4px;
+  padding-left: 7px;
+  padding-top: 3px;
   margin-left: .5rem;
 }
 
@@ -437,5 +457,107 @@ footer .container .attribution a:hover {
 
 footer .container .attribution a.BlessTheBoy {
   font-family: Alliance;
+}
+
+@media screen and (max-width: 43.75rem) {
+  .header .logo-container {
+    width: 80px;
+  }
+  .header .nav ul li {
+    margin-left: 1rem;
+  }
+  .header .nav ul li a {
+    padding: .3rem;
+    font-size: .7rem;
+  }
+  .intro {
+    background: #1c2431 url("../images/bg-curvy-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+  }
+  .intro .container .text-container h1 {
+    font-size: 1.4rem;
+    line-height: 2rem;
+  }
+  .intro .container .text-container p {
+    font-size: .75rem;
+  }
+  .features .container .feature p {
+    line-height: 1rem;
+  }
+  .productive .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 3rem 1rem;
+  }
+  .productive .container .text-container h2 {
+    font-size: 1.1rem;
+    margin-top: 2rem;
+  }
+  .productive .container .text-container p {
+    font-size: .85rem;
+    line-height: 1.15rem;
+  }
+  .productive .container .text-container .work #text {
+    font-size: .85rem;
+  }
+  .productive .container .text-container .work #text hr {
+    width: 145px;
+  }
+  .info .container .access {
+    width: 100%;
+    padding: 1.7rem;
+  }
+  .info .container .access .text-container {
+    padding: 0;
+    padding-top: 1.5rem;
+  }
+  .info .container .access .text-container h2 {
+    font-size: 1.3rem;
+  }
+  .info .container .access .text-container p {
+    font-size: .8rem;
+  }
+  .info .container .access form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .info .container .access form input {
+    height: 35px;
+    padding: .6rem;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .info .container .access form button {
+    height: 35px;
+    padding: .6rem;
+    font-size: .75rem;
+  }
+  footer {
+    padding-top: 11rem;
+  }
+  footer .container {
+    padding: 0 .5rem;
+  }
+  footer .container .footer-links {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  footer .container .footer-links .contact, footer .container .footer-links .list1, footer .container .footer-links .list2 {
+    margin-bottom: 2rem;
+  }
+  footer .container .footer-links .social-links {
+    margin: 0 auto;
+  }
 }
 /*# sourceMappingURL=main.css.map */
